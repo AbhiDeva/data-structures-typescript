@@ -58,3 +58,42 @@ expressions.forEach(expr => {
     console.log(`Expression: ${expr} is ${isBalanced(expr) ? 'Balanced' : 'Not Balanced'}`);
 });
 
+
+// stack example 4
+import { PostfixEvaluator } from './examples/stacks/example-4/PostfixValidator.js';
+
+const evaluator = new PostfixEvaluator();
+const postfixExpressions = [
+    "23 34 + 45 *", // (23 + 34) * 45
+    "5 1 2 + 4 * + 3 -", // 5 + ((1 + 2) * 4) - 3
+    "10 2 8 * + 3 -", // 10 + (2 * 8) - 3
+    "2 3 + 5 /", // (2 + 3) / 5
+    "7 8 + 3 2 + /" // (7 + 8) / (3 + 2)
+];
+
+postfixExpressions.forEach(expr => {
+    try {
+        const result = evaluator.evaluate(expr);
+        console.log(`Postfix Expression: "${expr}" = ${result}`);
+    } catch (error) {
+        console.error(`Error evaluating expression "${expr}":`, error);
+    }
+});
+
+// stack example 4 - next greater element
+import { NextGreater } from './examples/stacks/example-4/NextGreater.js';
+
+const nextGreater = new NextGreater();
+const arraysToTest = [
+    [4, 5, 2, 25],
+    [13, 7, 6, 12],
+    [1, 3, 2, 4],
+    [6, 8, 0, 1, 3]
+];
+
+arraysToTest.forEach(arr => {
+    const result = nextGreater.evaluate(arr);
+    console.log(`Next Greater Elements for [${arr}] are [${result}]`);
+});
+
+// Note: You can run this code in a TypeScript environment to see the stack implementations in action.

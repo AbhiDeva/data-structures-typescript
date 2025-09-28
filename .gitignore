@@ -5,3 +5,4 @@ dist/
 *.d.ts
 *.d.ts.map
 package-lock.json
+.DS_Store

@@ -46,4 +46,23 @@ const expressions = [
 expressions.forEach(expr => {
     console.log(`Expression: ${expr} is ${isBalanced(expr) ? 'Balanced' : 'Not Balanced'}`);
 });
+// stack example 4
+import { PostfixEvaluator } from './examples/stacks/example-4/PostfixValidator.js';
+const evaluator = new PostfixEvaluator();
+const postfixExpressions = [
+    "23 34 + 45 *", // (23 + 34) * 45
+    "5 1 2 + 4 * + 3 -", // 5 + ((1 + 2) * 4) - 3
+    "10 2 8 * + 3 -", // 10 + (2 * 8) - 3
+    "2 3 + 5 /", // (2 + 3) / 5
+    "7 8 + 3 2 + /" // (7 + 8) / (3 + 2)
+];
+postfixExpressions.forEach(expr => {
+    try {
+        const result = evaluator.evaluate(expr);
+        console.log(`Postfix Expression: "${expr}" = ${result}`);
+    }
+    catch (error) {
+        console.error(`Error evaluating expression "${expr}":`, error);
+    }
+});
 //# sourceMappingURL=index.js.map

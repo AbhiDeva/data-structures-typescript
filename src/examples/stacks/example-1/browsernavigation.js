@@ -1,4 +1,4 @@
-import { Stack } from "../core/stack.js";
+import { Stack } from "./../../../core/stack.js";
 class BrowserHistory {
     backStack;
     forwardStack;

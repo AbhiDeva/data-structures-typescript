@@ -1,5 +1,5 @@
-import { Stack } from "../core/stack.js";
-import type { HistoryEntry } from "../model/HistoryEntry.js";
+import { Stack } from "./../../../core/stack.js";
+import type { HistoryEntry } from "./../../../model/HistoryEntry.js";
 
 
 class BrowserHistory {

@@ -97,3 +97,24 @@ arraysToTest.forEach(arr => {
 });
 
 // Note: You can run this code in a TypeScript environment to see the stack implementations in action.
+
+
+import { PhoneValidator } from "./examples/stacks/example-4/PhoneNumberValidation.js";
+
+const validator = new PhoneValidator();
+
+// Test cases
+const numbers = [
+  "",                    // empty
+  "12345",               // too short
+  "1234567890",          // valid
+  "123-456-7890",        // valid with dashes
+  "12345678901234567890123456789012345678901", // too long
+  "12345@67890"          // invalid char
+];
+
+numbers.forEach((num) => {
+  console.log(`\nValidating: "${num}"`);
+  const errors = validator.validate(num);
+  validator.printErrors();
+});

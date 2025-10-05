@@ -65,4 +65,34 @@ postfixExpressions.forEach(expr => {
         console.error(`Error evaluating expression "${expr}":`, error);
     }
 });
+// stack example 4 - next greater element
+import { NextGreater } from './examples/stacks/example-4/NextGreater.js';
+const nextGreater = new NextGreater();
+const arraysToTest = [
+    [4, 5, 2, 25],
+    [13, 7, 6, 12],
+    [1, 3, 2, 4],
+    [6, 8, 0, 1, 3]
+];
+arraysToTest.forEach(arr => {
+    const result = nextGreater.evaluate(arr);
+    console.log(`Next Greater Elements for [${arr}] are [${result}]`);
+});
+// Note: You can run this code in a TypeScript environment to see the stack implementations in action.
+import { PhoneValidator } from "./examples/stacks/example-4/PhoneNumberValidation.js";
+const validator = new PhoneValidator();
+// Test cases
+const numbers = [
+    "", // empty
+    "12345", // too short
+    "1234567890", // valid
+    "123-456-7890", // valid with dashes
+    "12345678901234567890123456789012345678901", // too long
+    "12345@67890" // invalid char
+];
+numbers.forEach((num) => {
+    console.log(`\nValidating: "${num}"`);
+    const errors = validator.validate(num);
+    validator.printErrors();
+});
 //# sourceMappingURL=index.js.map
